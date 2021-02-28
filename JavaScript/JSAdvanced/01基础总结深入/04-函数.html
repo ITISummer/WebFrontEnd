@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04-函数</title>
+</head>
+<body>
+    <!-- 
+1. 什么是函数
+实现特定功能的 n 条语句的封装
+只有函数是可以执行的，其他类型数据不能执行
+
+2. 为什么要用函数
+提高代码复用
+便于阅读交流
+
+3. 如何定义函数
+函数申明 function fn(){}
+表达式 var fn = function(){}
+
+4. 如何调用（执行）函数
+test(): 直接调用
+new test(): new 调用
+obj.test(): 对象调用方法
+test.call/apply(obj): 临时让 test() 成为 obj 的方法进行调用
+
+5. 什么是回调函数
+非开发者主动调用的函数（你定义了，你没有调，但最终执行了）
+
+6. 有哪些常见回调函数
+    dom 回调函数
+    定时器回调函数
+
+    ajax 请求回调函数
+    生命周期回调函数
+     -->
+     <button id="btn">我是 button</button>
+     <script type="text/javascript">
+     //4
+        var obj = {}
+        function test() {
+            console.log('lvlv')
+        }
+        test.call(obj)
+
+        //5 定时器-回调函数
+        setTimeout(function() {
+            alert('lvlv')
+        }, 2000)
+
+        //5 dom 回调函数
+        document.getElementById("btn").onclick = function(){
+            alert(this.innerHTML)
+        }
+     </script>
+
+</body>
+</html>

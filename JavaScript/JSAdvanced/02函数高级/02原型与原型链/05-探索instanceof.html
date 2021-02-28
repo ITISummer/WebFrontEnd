@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05-探索instanceof</title>
+</head>
+
+<body>
+    <!-- 
+1. instanceof 是如何判断的
+* 表达式：a instanceof b
+* 如果 b 函数的显式原型对象在 a 对象原型链上，返回 true，否则返回 false
+2. Function 是通过 new 自己产生的实例
+     -->
+    <script type="text/javascript">
+function Foo() {
+var f1 = new Foo()
+console.log(f1 instanceof Foo) //true
+console.log(f1 instanceof Object)//true
+}
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定位</title>
+    <style>
+        body{
+            font-size: 60px;
+        }
+        .box1,.box2,.box3{
+            width: 200px;
+            height: 200px;
+        }
+        .box1{
+            background-color: #bfa;
+        }
+        .box2{
+            background-color: orange;
+        }
+        /* 
+        定位（position）
+        - 定位是一种更加高级的布局手段
+        - 通过定位可以将元素摆放到页面任意位置
+        - 通过 position 属性来设置定位
+            可选值：
+            - static：默认值，元素是静止的，没有开启定位
+
+            - relative：开启元素的相对定位（相对于自身在以前文档流中的位置）
+                1. 元素开启相对定位以后，如果不设置偏移量元素不会发生任何的变化
+                2. 相对定位时参照于元素在文档流中的位置进行定位的
+                3. 相对定位会提升元素的层级
+                4. 相对定位不会使元素脱离文档流
+                5. 相对定位不会改变元素的性质：块还是块，行内还是行内
+
+            - absolute：开启元素的绝对定位
+                绝对定位
+                - 当元素的 position 属性值设置为 absolute 时，则开启了元素的绝对定位
+                绝对定位的特点
+                1. 开启绝对定位后，如果不设置偏移量元素的位置不会发生变化
+                2. 开启绝对定位后，元素会从文档流中脱离
+                3. 绝对定位会改变元素的性质，行内变成块，块的高度被内容撑开
+                4. 绝对定位会使元素提升一个层级
+                5. 绝对定位元素是相对于其包含块进行定位的
+                包含块（ containing block)
+                    - 正常情况下
+                    包含块就是离当前元素最近的祖先块元素
+                    <div> <div></div> </div>
+                    <div><span><em>hello</em></span></div>
+                绝对定位的包含块
+                    - 包含块就是离它最近的开启了定位的祖先元素，如果所有的祖先元素都没有开启定位则根元素就是它的包含块
+                    - html(根元素、初始包含块）
+
+            - fixed：开启元素的固定定位
+            固定定位
+            - 将元素的 position 属性设置为 fixed 则开启了元素的固定定位
+            - 固定定位也是一种绝对定位，所以大部分特点都和绝对定位一样
+            - 唯一不同的是固定定位永远参照于浏览器的视口进行定位
+            - 固定定位的元素不会随网页的滚动条滚动
+
+            - sticky：开启元素的粘滞定位
+            粘滞定位
+            - 当元素的 position属性设置为 sticky时则开启了元素的粘滞定位
+            - 粘滞定位和相对定位的特点基本一致
+            - 不同的是粘滞定位可以在元素到达某个位置时将其固定
+
+        偏移量（offset）
+        - 当元素开启了定位以后，可以通过偏移量来设置元素的位置
+        - top：定位元素和定位位置上边的距离
+        - bottom：定位元素和定位位置下边的距离
+        - left：定位元素和定位位置的左侧距离
+        - right：定位元素和定位位置的右侧距离
+        - 定位元素垂直方向的位置由 top 和 bottom 两个属性来控制
+        - 定位元素水平方向的位置由 left 和 right 两个属性控制
+        - 通常情况下我们只会使用一个
+        - right 越大元素越靠左
+        - bottom值越大，定位元素越向上移动
+         */
+        .box3{
+            background-color: yellow;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+    <div class="box3">3</div>
+</body>
+</html>

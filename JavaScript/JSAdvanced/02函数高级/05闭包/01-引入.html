@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01-引入</title>
+</head>
+
+<body>
+    <button id="btn1">测试1</button>
+    <button id="btn2">测试2</button>
+    <button id="btn3">测试3</button>
+
+    <script type="text/javascript">
+        var btns = document.getElementsByTagName('button')
+        var length = btns.length
+        //遍历加监听
+        // for(var i = 0; i < length; i++) {
+        //     var btn = btns[i]
+        //     btn.onclick = function() {
+        //         alert('第'+(i+1)+'个')
+        //     }
+        // }
+
+        //利用 index 属性
+        // for(var i = 0; i < length; i++) {
+        //     var btn = btns[i]
+        //     btn.index = i
+        //     btn.onclick = function() {
+        //         alert('第'+(this.index+1)+'个')
+        //     }
+        // }
+
+        //利用闭包
+        for (var i = 0; i < length; i++) {
+            (function (i) {
+                var btn = btns[i]
+                btn.onclick = function () {
+                    alert('第' + (i + 1) + '个')
+                }
+            })(i) //这里的 i 是全局变量
+        }
+    </script>
+</body>
+
+</html>

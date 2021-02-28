@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02-数据_变量_内存01</title>
+</head>
+<body>
+    <!-- 
+1. 什么是数据
+存储在内存中代表特定信息的内容，本质是 0101...
+数据的特点：可传递，可运算
+一切皆数据
+内存中所有操作的目标：数据
+算术运算
+逻辑运算
+赋值
+运行函数
+
+2. 什么是内存
+内存条通电后产生的临时存储数据的空间
+3. 什么是变量
+可变化的量，由变量名和变量值组成
+每个变量都对应一块小内存，变量名用来查找对应的内存，变量值是值存储在变量名对应内存中的数据
+一块内存的两个数据：内部存储的数据和地址值
+内存分类：栈(全局变量和局部变量)和堆(对象)
+4. 三者之间关系
+内存是用来存储数据的空间
+变量是内存的标识
+
+5. var a = xxx, a 内存中到底保存的是什么
+xxx 是基本数据，保存的就是基本数据
+xxx 是对象，保存的就是对象的地址值
+xxx 是变量，保存的是 xxx 的内存内容，可能是基本数据，也可能是地址值
+
+6. 关于引用变量赋值问题
+两个引用变量指向同一个对象，通过一个变量修改对象内部数据，另一个变量看到的是修改后的内容（数据）
+两个引用变量指向同一个对象，让其中一个变量指向另一个对象，则原对象不会被浏览器垃圾回收器回收
+
+7. 在 js 调用函数传递变量参数时，是值传递还是引用传递
+理解1：都是值（基本/地址值）传递
+理解2：可能是值，也可能是引用传递（地址值）
+
+8. js 引擎如何管理内存
+内存生命周期
+分配小内存空间，得到他的使用权
+存储数据，可以反复进行操作
+释放小内存空间
+
+释放内存
+局部变量：函数（模块）执行完自动释放
+对象：成为垃圾对象后被垃圾回收器回收
+     -->
+     
+     <script type="text/javascript">
+     //5
+        var a = 3
+        a = function() {
+
+        }
+
+        var b = 'abc'
+        a = b
+     //6
+        var obj1 = {name: 'tom'}
+        var obj2 = obj1
+        obj2.age = 22
+        console.log(obj1.age) // 22
+
+        function fn1(obj) {
+            console.log('before fn()'+obj.age)
+            obj = {age: 12}
+            console.log('after fn()'+obj.age)
+        }
+        fn1(obj1)
+        console.log(obj1.age)
+        //7
+        //值传递（字面量传递）
+        var a = 3
+        function fn2(a) {
+            a = a +1
+        }
+        console.log(a)
+        //引用传递
+        function fn3(obj) {
+            console.log(obj.name)
+        }
+        var obj3 = {name: 'tom'}
+        fn3(obj3)
+     </script>
+</body>
+</html>
