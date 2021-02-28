@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02-列表删除</title>
+</head>
+<body>
+    <ul class="list">
+        <li>lvlv1 <a href="javascript:;">删除</a></li>
+        <li>lvlv2 <a href="javascript:;">删除</a></li>
+        <li>lvlv3 <a href="javascript:;">删除</a></li>
+        <li>lvlv4 <a href="javascript:;">删除</a></li>
+        <li>lvlv5 <a href="javascript:;">删除</a></li>
+    </ul>
+</body>
+<script type="text/javascript">
+    window.onload = function() {
+        //假删除
+        var aNodes = document.querySelectorAll('.list > li > a')
+        for(var i = 0; i < aNodes.length; i++) {
+            aNodes[i].onclick = function() {
+                // aNodes[i].parentNode.style.display = 'none' //会报错
+                this.parentNode.style.display = 'none'
+            }
+        }
+    }
+</script>
+</html>
