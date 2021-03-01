@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" id="html">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08-getBoundingClientRect</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #wrap {
+            position: absolute;
+            background-color: pink;
+            left: 100px;
+            top: 50px;
+        }
+
+        #inner1 {
+            position: absolute;
+            background-color: deeppink;
+            top: 100px;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body id="body" style="height: 3000px; width: 3000px;">
+    <div id="wrap">wrap
+        <div id="inner1">inner1</div>
+    </div>
+</body>
+<script type="text/javascript">
+    /*
+本身定位为 fixed
+	==>offsetParent: null（不是火狐）
+        offsetLeft 和 offsetTop 也是参照于 body
+	==>offsetParent: body (火狐)
+
+本身定位不为 fixed
+	父级没有定位
+		==> offsetParent: body
+	父级有定位
+		==> offsetParent: 定位父级
+*/
+    window.onload = function () {
+        /*
+        代表元素 border-box 的尺寸
+        height
+        width
+
+        元素左上角的相对位置
+        left
+        top
+
+        元素右下角的相对位置
+        right
+        bottom
+        */
+        var inner1 = document.querySelector('#inner1')
+        //获得一个元素四个角的相对位置
+        var point = inner1.getBoundingClientRect()
+        console.log(point);
+        //getBoundingClientRect() + 滚动条滚动时元素滚动的距离 ---- 绝对位置
+
+    }
+</script>
+
+</html>

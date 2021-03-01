@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" id="html">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05-获取元素绝对位置</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #wrap{position: absolute; background-color: pink; left: 100px; top: 50px;}
+        #inner1{position: absolute; background-color: deeppink;  top: 100px;}
+        div{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body id="body">
+    <div id="wrap">wrap
+        <div id="inner1">inner1</div>
+    </div>
+</body>
+<script type="text/javascript">
+/*
+本身定位为 fixed
+	==>offsetParent: null（不是火狐）
+        offsetLeft 和 offsetTop 也是参照于 body
+	==>offsetParent: body (火狐)
+
+本身定位不为 fixed
+	父级没有定位
+		==> offsetParent: body
+	父级有定位
+		==> offsetParent: 定位父级
+*/
+    window.onload = function(){
+        // console.log(inner1.offsetParent)
+        // console.log(inner1.offsetLeft,inner1.offsetTop)
+        //border & margin 会影响元素取值
+        var inner1 = document.querySelector('#inner1')
+        var point = getPointAb(inner1)
+        console.log(point)
+
+        function getPointAb(node) {
+            var x = 0
+            var y = 0
+            while(node) {
+                x += node.offsetLeft
+                y += node.offsetTop
+
+                node = node.offsetParent
+            }
+            return {x:x,y:y}
+        }
+    }
+</script>
+</html>

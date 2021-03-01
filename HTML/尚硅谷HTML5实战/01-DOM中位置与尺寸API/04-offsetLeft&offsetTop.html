@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>03-offsetParent</title>
     <style type="text/css">
-        #wrap{position: absolute; background-color: pink;}
-        #inner1{position: fixed;background-color: deeppink;}
-        #inner2{position: relative;background-color: hotpink;}
-        #inner3{position: fixed;background-color: yellow;}
+        #wrap{position: absolute; background-color: pink; left: 100px; top: 50px;}
+        #inner1{position: fixed;background-color: deeppink; left: 50px; top: 100px;}
+        #inner2{position: relative;background-color: hotpink; left: 250px; top: 100px;}
+        #inner3{position: fixed;background-color: yellow; left: 50px; top: 140px;}
         div{
             width: 200px;
             height: 200px;
@@ -29,6 +29,7 @@
 /*
 本身定位为 fixed
 	==>offsetParent: null（不是火狐）
+        offsetLeft 和 offsetTop 也是参照于 body
 	==>offsetParent: body (火狐)
 
 本身定位不为 fixed

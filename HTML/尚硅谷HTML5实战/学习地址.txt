@@ -1,0 +1,8 @@
+https://www.bilibili.com/video/BV1YW411T7p3
+
+1.分清 parentNode 和 offsetParent的区别
+	parentnode: 直接父级
+	offsetparent: 类似于css的包含块
+2. offsetParent 的作用
+	offsetLeft 和 offsetTop 是参照于 offsetParent 的内边距边界的
+3. dom里所有的元素都是有 offsetLeft 和 offsetTop 的
