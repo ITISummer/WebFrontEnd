@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>max停靠栏</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #wrap {
+            position: absolute;
+            /* margin: 0 auto; 不能使用，因为设置定位 absolute 后元素浮动，margin 设置效果失效 */
+            bottom: 0;
+            left: 0;
+            /* 撑开 div 宽度为父类宽度 100% */
+            width: 100%;
+            /* 设置 div 中图片内容居中显示 */
+            text-align: center;
+        }
+
+        #wrap > img {
+            width: 64px;
+            /* height：自适应 */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <img src="./images/1.png" alt="图片缺失">
+        <img src="./images/2.png" alt="图片缺失">
+        <img src="./images/3.png" alt="图片缺失">
+        <img src="./images/4.png" alt="图片缺失">
+        <img src="./images/5.png" alt="图片缺失">
+    </div>
+</body>
+<script text="text/javascript">
+window.onload = function() {
+
+
+    var r = 64;
+    var imgNodes = document.querySelectorAll("#wrap > img")
+
+    document.onmousemove = function (ev) {
+        //处理兼容性问题
+        ev = ev || event
+        for (var i = 0; i < imgNodes.length; i++) {
+            //getBoundingClientRect() Return the size of an element and its top-lefe corner position relative to the viewport [https://www.w3schools.com/jsref/met_element_getboundingclientrect.asp]
+            //offsetWidth: Get the height and width of a <div> element, including padding and border 
+            //MouseEvent.clientX //获得鼠标坐标信息
+            var a = imgNodes[i].getBoundingClientRect().left + imgNodes[i].offsetWidth / 2 - ev.clientX
+            var b = imgNodes[i].getBoundingClientRect().top + imgNodes[i].offsetHeight / 2 - ev.clientY
+            var c = Math.sqrt(a * a + b * b)
+
+            if (c >= r) {
+                c = r
+            }
+            imgNodes[i].style.width = 128 - c * 0.2 + "px"
+        }
+
+
+    }
+}
+</script>
+
+</html>
