@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02-滚轮方向</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #test{
+            width: 200px;
+            height: 200px;
+            background: pink;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="test"></div>
+</body>
+<script type="text/javascript">
+    window.onload = function() {
+        var testNode = document.querySelector('#test')
+        //火狐浏览器
+        if(testNode.addEventListener) {
+            testNode.addEventListener('DOMMouseScroll',function(ev) {
+                // 向上：负 向下：正
+                ev = ev || event
+                console.log(ev.detail);
+            })
+        }
+            //非火狐浏览器
+            // 向上：正 向下：负
+            testNode.onmousewheel = function(ev) {
+            ev = ev || event
+            console.log(ev.wheelDelta);
+        }
+    }
+</script>
+</html>

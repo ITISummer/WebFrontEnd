@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04-曲线运动</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #app{
+            width: 10px;
+            height: 10px;
+            background: deeppink;
+
+            position: absolute;
+            left: 400px;
+            top: 300px;
+        }
+        .follow{
+            width: 1px;
+            height: 1px;
+            background: black;
+
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+</body>
+<script>
+window.onload = function() {
+    var app = document.querySelector('#app')
+    var startX = app.offsetLeft
+    var startY = app.offsetTop
+
+    var deg = 0
+    var stepY = 100
+    var stepX = 50
+    setInterval(function() {
+        deg++;
+        app.style.left = startX + deg*Math.PI/180*stepX+ 'px'
+        app.style.top = startY + Math.sin(deg*Math.PI/180) * stepY + 'px'
+
+
+        //follow
+        var div = document.createElement('div')
+        div.classList.add('follow')
+        div.style.left = app.offsetLeft + 'px'
+        div.style.top = app.offsetTop + 'px'
+        document.body.appendChild(div)
+
+    },1000/60)
+}
+</script>
+</html>

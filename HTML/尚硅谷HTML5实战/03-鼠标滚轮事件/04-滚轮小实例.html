@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04-滚轮小实例</title>
+    <style type="text/css">
+        body{
+            height: 3000px;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #test{
+            width: 100%;
+            height: 200px;
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="test"></div>
+</body>
+<script type="text/javascript">
+    window.onload = function() {
+        var testNode = document.querySelector('#test')
+        //火狐浏览器
+        if(testNode.addEventListener) {
+            testNode.addEventListener('DOMMouseScroll',fn);
+        }
+        //非火狐浏览器
+        // 向上：正 向下：负
+        testNode.onmousewheel = fn
+
+        function fn(ev) {
+            ev = ev || event
+            var dir = ""
+            if(ev.wheelDelta) {
+                dir = ev.wheelDelta > 0? "up":"down"
+            }
+            if(ev.detail) {
+                dir = ev.detail < 0? "up":"down"
+            }
+            console.log(dir);
+
+        //实现窗帘效果
+        switch(dir) {
+            case 'up': 
+                testNode.style.height = testNode.offsetHeight - 10 + 'px'
+                break;
+                
+            case 'down':
+                testNode.style.height = testNode.offsetHeight + 10 + 'px'
+                break;
+        }
+
+        //禁止事件的默认行为 dom2
+        if(ev.preventDefault) {
+            ev.preventDefault()
+        }
+
+        //禁止事件的默认行为 dom0
+        return false
+        }
+    }
+</script>
+</html>
