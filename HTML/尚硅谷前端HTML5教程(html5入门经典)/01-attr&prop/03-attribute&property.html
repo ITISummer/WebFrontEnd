@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03-attribute&property</title>
+</head>
+<body>
+    <!-- 
+        attribute
+            预定义属性 checked
+            自定义属性 qhf
+
+        nodeType:1 [元素节点]
+        nodeType:2 [属性节点]
+        nodeType:3 [文本节点]
+
+        非布尔值属性（checked）：不管什么情况，修改 attribute 或者 property 都会同步更改
+        布尔值属性：（name）：
+            1. 改变 property 时，不会同步 attribute
+            2. 在没有动过 property 时，attribute 会同步 property
+            3. 一旦动过 property，attribute 不会同步 property
+        
+        property:
+        js 原生对象属性 name,height,weight
+
+        浏览器认准 property，用户操作的是 property
+    -->
+    <input type="checkbox" checked="checked" qhf="qhf">
+</body>
+<script type="text/javascript">
+    var qhf = document.querySelector('input[type=checkbox]')
+
+    //操纵 checked 属性[attribute] [input 标签（也可以叫 元素）]
+    qhf.setAttribute('checked','checked1')
+    qhf.setAttribute('checked','checked2')
+
+    //操纵 checked 属性[property] [input 元素节点]
+    qhf.checked = 'checked3'
+</script>
+</html>

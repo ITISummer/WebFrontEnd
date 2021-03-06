@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01-class</title>
+</head>
+<body>
+    <div id="test" class="lv1 lv2 lv3"></div>
+</body>
+<script type="text/javascript">
+    var testNode = document.querySelector('#test')
+    console.log(testNode.classList)
+    console.log(testNode.remove('lv2'))
+    testNode.classList.add('lv4')
+    console.log(testNode.classList);
+</script>
+</html>

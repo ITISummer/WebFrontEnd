@@ -1,0 +1,18 @@
+[尚硅谷前端HTML5教程(html5入门经典)]https://www.bilibili.com/video/BV1YW411T7Lj
+### 1. 什么是 attribute, 什么是 property
+	html 标签的预定义和自定义属性我们统称为 attribute
+	js 原生对象的直接属性，我们统称为 property
+### 2. 什么是布尔值属性，什么是非布尔值属性
+	property 的属性值为布尔类型的我们统称为布尔值属性
+	property 的属性值为非布尔类型的我们统称为非布尔值属性
+### 3. attribute 和 property 的同步关系
+	非布尔值属性：实时同步 推荐使用 attribute 方法
+	布尔值属性：推荐使用 property 方法
+	property 永远都不会同步 attribute
+	在没有动过 property的情况下
+		attribute: 会同步 property
+	在动过 property的情况下
+		attribute不会同步 property
+
+### 4. 用户操作的是 property
+### 5. 浏览器认准的是 property
