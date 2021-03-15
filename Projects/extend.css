@@ -1,0 +1,74 @@
+#header a {
+  color: orange;
+}
+/* --------------------- */
+.lazy-eval {
+  width: 9%;
+}
+/* --------------------- */
+.block {
+  color: red;
+  color: blue;
+}
+.block .inner {
+  background-color: blue;
+}
+/* --------------------- */
+.grand .parent > .grand .parent {
+  color: red;
+}
+.grand .parent .grand .parent {
+  color: green;
+}
+.grand .parent.grand .parent {
+  color: blue;
+}
+.grand .parent,
+.grand .parentish {
+  color: cyan;
+}
+/* --------------------- */
+nav ul {
+  background: blue;
+}
+.inline,
+nav ul {
+  color: red;
+}
+/* --------------------- */
+.animal,
+.bear {
+  background-color: black;
+  color: white;
+}
+.bear,
+.animal {
+  background-color: brown;
+}
+/* --------------------- */
+li.list > a,
+button.list-style {
+  color: rebeccapurple;
+}
+/* --------------------- */
+.mixin {
+  box-shadow: 0 0 20px black, 0 0 10px #555;
+}
+/* --------------------- */
+.c {
+  color: black;
+}
+/* --------------------- */
+.class {
+  color: black;
+}
+/* --------------------- */
+.some .selector div {
+  color-1: #008000;
+  color-2: #008000;
+  padding-2: 2;
+}
+/* --------------------- */
+div {
+  padding: red;
+}
