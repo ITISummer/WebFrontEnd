@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        html{
-            perspective:800px;
-            
+        html {
+            perspective: 800px;
+
         }
-        .box1{
+
+        .box1 {
             width: 100px;
             height: 100px;
             background-color: #bfa;
-            transition:2s;
+            transition: 2s;
             margin: 100px auto;
 
 
@@ -22,36 +24,36 @@
             /* transform-origin:20px 20px;  */
         }
 
-        .box1:hover{
+        .box1:hover {
             /* 
                 对元素进行缩放的函数：
                     scaleX() 水平方向缩放
                     scaleY() 垂直方向缩放
                     scale() 双方向的缩放
             */
-            transform:scale(2)
+            transform: scale(2)
         }
 
 
-        .img-wrapper{
+        .img-wrapper {
             width: 200px;
             height: 200px;
             border: 1px red solid;
             overflow: hidden;
         }
 
-        img{
+        img {
             transition: .2s;
         }
 
-        .img-wrapper:hover img{
-            transform:scale(1.2);
+        .img-wrapper:hover img {
+            transform: scale(1.2);
         }
-
     </style>
 </head>
+
 <body>
-    
+
     <div class="box1"></div>
 
     <div class="img-wrapper">
@@ -60,4 +62,5 @@
 
 
 </body>
+
 </html>
