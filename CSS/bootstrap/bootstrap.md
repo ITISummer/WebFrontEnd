@@ -4,10 +4,10 @@
 	英文网  :  http://getbootstrap.com/
 	
 ###容器
-	流体布局容器
+	流体布局容器 (.container-fluid)-不常用
 		容器的width为auto，只是两边加了15px的padding。
 	
-	固定布局
+	固定布局(.container)-常用
 		容器的width会随设备分辨率的不同而生产变化
 			分辨率阈值
 				w >=1200	 		容器的width为1170    左右padding为15 （注意是borderBox）
@@ -15,12 +15,13 @@
 				992 > w >=768		容器的width为750     左右padding为15  （注意是borderBox）
 				768 > w >=992		容器的width为auto    左右padding为15  （注意是borderBox）
 				
-###栅格系统
-	 col-lg-x（大于等于 1200px）    
-	 col-md-x（大于等于 992px）
-	 col-sm-x（大于等于 768px）
-	 col-xs-x（小于 768px）
-	 x 默认拥有12个等级
+				<!-- width 为 auto 则 padding 值往盒内扣取；width为 100% 则 padding 值设置会影响盒子大小，盒子会变大 -->
+###栅格系统(最重要)-类似 flex 布局
+	 col-lg-x（大于等于 1200px - 大屏PC）    
+	 col-md-x（大于等于 992px - 中屏PC）
+	 col-sm-x（大于等于 768px - 平板）
+	 col-xs-x（小于 768px - 移动手机）
+	 x 默认拥有12个等级-栅格布局将浏览器宽度平均分为 12 列
 	 
 ###列偏移
 	调整的是margin-left，分13个等级（0到12）
@@ -34,9 +35,10 @@
 			0时为auto
 
 ###响应式工具
+在不同设备设置隐藏或显示
 
 ###容器与栅格盒模型设计的精妙之处
-		container 提供了一个15px的padding
+		container 提供了一个15px的padding - 便于美观
 		row 是 column 直接存在的容器，row 默认最多可有12个 column，
 	同时作为都是左浮动的 column 的 wrapper，自带 clearfix 的性质。
 	同时 row 还有一个很特殊的地方，就是左右各有 －15px 的 margin，
@@ -47,9 +49,3 @@
 	同时 不同column的内容之间就有了30px的槽
 	
 	目的是为了确保列与列之间有30px的槽，列与容器之间有15px的槽
-
-				 
-			
-			
-	 
-				

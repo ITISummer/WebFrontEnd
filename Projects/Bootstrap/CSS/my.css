@@ -1,0 +1,27 @@
+/* 设置自定义通用样式 */
+body {
+  font-size: 13px;
+  font-family: sans-serif;
+  color: #000;
+}
+.top-bar {
+  background-color: #fff;
+}
+/* 设置自定义头部样式 */
+#lk-header .top-bar {
+  height: 40px;
+  line-height: 39px;
+  border: 1px solid #e0e0e0;
+}
+#lk-header .top-bar .top-bar-1 {
+  background-color: red;
+}
+#lk-header .top-bar .top-bar-2 {
+  background-color: green;
+}
+#lk-header .top-bar .top-bar-3 {
+  background-color: blue;
+}
+#lk-header .top-bar .top-bar-4 {
+  background-color: yellow;
+}
