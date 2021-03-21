@@ -22,17 +22,21 @@
 2. jQuery的2把利器
   * jQuery函数: $/jQuery
     * jQuery向外暴露的就是jQuery函数, 可以直接使用
-    * 当成一般函数使用人: $(param)
-      * param是function: 相当于window.onload = function(文档加载完成的监听)
-      * param是选择器字符串: 查找所有匹配的DOM元素, 返回包含所有DOM元素的jQuery对象
-      * param是DOM元素: 将DOM元素对象包装为jQuery对象返回  $(this)
-      * param是标签字符串: 创建标签DOM元素对象并包装为jQuery对象返回
+    * 当成一般函数使用: $(param)
+      * param是function: 相当于window.onload = function(文档加载完成的监听)-$(function(){逻辑代码})
+      * param是选择器字符串: 查找所有匹配的DOM元素, 返回包含所有DOM元素的jQuery对象 $('选择器字符串')
+      * param是DOM元素: 将DOM元素对象包装为jQuery对象返回  $(this)-元素节点，属性节点，文本节点
+      * param是标签字符串: 创建标签DOM元素对象并包装为jQuery对象返回 $('input')
     * 当成对象使用: $.xxx
       * each(obj/arr, function(key, value){})
       * trim(str)
-  * jQuery对象
+  * jQuery对象(
+    * 不能直接使用 DOM 对象的属性和方法，反之亦然；
+    * jQuery 对象是一个 DOM 数组对象，可以通过数组下标方式转为 DOM 对象来使用
+    * jQuery 对象是使用 $() 包装 DOM 对象后产生的对象
+    )
     * 包含所有匹配的n个DOM元素的伪数组对象
-    * 执行$()返回的就是jQuery对象
+    * 执行$()返回的就是jQuery对象-所以可以链式调用
     * 基本行为:
       * length/size(): 得到dom元素的个数
       * [index]: 得到指定下标对应的dom元素
@@ -80,5 +84,5 @@
   * removeAttr(name)/removeProp(name): 删除属性
   * addClass(classValue): 添加class
   * removeClass(classValue): 移除指定class
-  * val() / val(value): 读写标签的value
+  * val() / val(value): 读写标签的value属性值
   * html() / html(htmlString): 读写标签体文本
