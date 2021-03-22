@@ -1,0 +1,10 @@
+尚硅谷_axios核心技术]https://www.bilibili.com/video/BV1NJ41197u6?p=2&spm_id_from=pageDriver 
+发送 Ajax 请求：
+    1. XHR-XMLHttpRequest
+    2. fetch() 函数
+
+REST:
+    GET:得到数据
+    POST:增加数据
+    PUT:更新数据
+    DELETE:删除数据
