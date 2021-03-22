@@ -1,0 +1,5 @@
+[尚硅谷Ajax教程https://www.bilibili.com/video/BV1WC4y1b78y
+Ajax 应用：
+    浏览器搜索框：关键字提醒
+    注册页面：提醒用户名更换
+    网页向下滚动时不刷新页面加载内容
