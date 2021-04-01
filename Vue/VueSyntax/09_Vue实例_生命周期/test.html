@@ -38,7 +38,7 @@
 
     mounted () {
       // 执行异步任务
-      this.intervalId = setInterval(() => {
+      this.intervalId = setInterval(() => { //匿名函数
         console.log('-----')
         this.isShow = !this.isShow
       }, 1000)
