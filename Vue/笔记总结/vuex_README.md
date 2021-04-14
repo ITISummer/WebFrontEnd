@@ -65,7 +65,7 @@
 		getters
 	})
 
-## 7). 组件中:
+## 7). 组件中: //解构赋值
 	import {mapGetters, mapActions} from 'vuex'
 	export default {
 		computed: mapGetters(['mmm'])

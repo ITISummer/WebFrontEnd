@@ -115,7 +115,7 @@
                   31.38098
                 ],
                 phone: "1232313124324",
-                category: "快餐便当/简餐",
+                categories: "快餐便当/简餐",
                 supports: [
                   {
                     description: "已加入“外卖保”计划，食品安全有保障",
@@ -211,7 +211,7 @@
             23.09499
           ],
           "phone": "18320326523",
-          "category": "鲜花蛋糕/面包",
+          "categories": "鲜花蛋糕/面包",
           "supports": [
             {
               "description": "准时必达，超时秒赔",
@@ -294,7 +294,7 @@
             30.27817
           ],
           "phone": "111",
-          "category": "快餐便当/简餐",
+          "categories": "快餐便当/简餐",
           "supports": [
             {
               "description": "已加入“外卖保”计划，食品安全有保障",

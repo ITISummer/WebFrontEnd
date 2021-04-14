@@ -19,7 +19,7 @@ import MessageDetail from '../pages/MessageDetail.vue'
  */
 Vue.use(VueRouter)
 
-export default new VueRouter ({
+export default new VueRouter({
   // 注册应用中所有的路由
   routes: [
     {
@@ -31,15 +31,15 @@ export default new VueRouter ({
       component: Home,
       children: [
         {
-          path: '/home/news',
+          path: '/home/news', // path 最左侧 '/' 永远代表根路径
           component: News
         },
         {
-          path: 'message',
+          path: 'message', // 简化写法
           component: Message,
           children: [
             {
-              path:'detail/:id',
+              path: 'detail/:id', // :id 表示占位
               component: MessageDetail
             }
           ]

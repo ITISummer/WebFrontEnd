@@ -117,7 +117,7 @@
 		* 监视具体的按键: @keyup.keyCode   @keyup.enter
 		* 停止事件的冒泡和阻止事件默认行为: @click.stop   @click.prevent
 		* 隐含对象: $event
-	v-bind : 强制绑定解析表达式  
+	v-bind : 强制绑定解析表达式
 		* html标签属性是不支持表达式的, 就可以使用v-bind
 		* 可以缩写为:  :id='name'
 		* :class
